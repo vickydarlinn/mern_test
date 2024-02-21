@@ -27,7 +27,7 @@ const InputComponent = ({
       </div>
 
       <button
-        onClick={onSave}
+        onClick={() => onSave(name, value, coins)}
         className="bg-buttonBg font-medium text-primary p-2 px-4 rounded-lg"
       >
         Save

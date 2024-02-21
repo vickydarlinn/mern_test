@@ -3,7 +3,16 @@ import React, { createContext, useState, useEffect } from "react";
 export const UserInfoContext = createContext();
 
 export const UserInfoProvider = ({ children }) => {
-  const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    linkedIn: "",
+    github: "",
+    profilePic: "",
+    resume: "",
+    coins: 0,
+  });
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(
     localStorage.getItem("token") ? true : false
   );

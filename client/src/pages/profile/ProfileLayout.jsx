@@ -29,14 +29,6 @@ const ProfileLayout = () => {
         >
           Project Details
         </NavLink>
-        <NavLink
-          to="experiences"
-          className={({ isActive }) =>
-            isActive ? "border-b border-b-buttonBg p-4" : "p-4"
-          }
-        >
-          Past Experiences
-        </NavLink>
       </div>
 
       <div>

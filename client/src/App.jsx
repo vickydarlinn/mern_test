@@ -6,16 +6,24 @@ import ProfileLayout from "./pages/profile/ProfileLayout";
 import PersonalDetails from "./pages/profile/personalDetails/PersonalDetails";
 import Education from "./pages/profile/education/Education";
 import Projects from "./pages/profile/projects/Projects";
-import Experiences from "./pages/profile/pastExperiences/Experiences";
 import Login from "./pages/login";
 import Protected from "./layout/protected";
 import NotFound from "./pages/notFound";
+import AppliedJobs from "./pages/appliedJobs";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
+        <Route
+          path="/applied-jobs"
+          element={
+            <Protected>
+              <AppliedJobs />
+            </Protected>
+          }
+        />
         <Route
           index
           element={
@@ -35,9 +43,9 @@ const App = () => {
           <Route path="personal-details" element={<PersonalDetails />} />
           <Route path="education" element={<Education />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="experiences" element={<Experiences />} />
         </Route>
       </Route>
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

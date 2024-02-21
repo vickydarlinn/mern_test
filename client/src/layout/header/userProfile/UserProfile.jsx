@@ -43,13 +43,14 @@ function ProfileModal({ setIsModalOpen, isModalOpen }) {
         <RxAvatar />
         <p className="text-sm">Edit Profile</p>
       </Link>
-      <div
+      <Link
+        to="/applied-jobs"
         onClick={() => setIsModalOpen(!isModalOpen)}
         className="flex items-center gap-2 p-4 hover:bg-white/10 cursor-pointer"
       >
         <MdOutlineSavedSearch className="text-2xl" />
         <p className="text-sm">Applied Internships</p>
-      </div>
+      </Link>
       <div
         onClick={() => setIsModalOpen(!isModalOpen)}
         className="flex items-center gap-2 p-4 hover:bg-white/10 cursor-pointer"

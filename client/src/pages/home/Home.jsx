@@ -6,6 +6,24 @@ const Home = () => {
   const internshipJsx = internshipData.map((data, i) => {
     return <JobCard key={i} data={data} />;
   });
+  // this handler will be called when user clicks on apply button
+  const handleApplyTOJob = async (id) => {
+    const json = await fetch(`/api/v1/jobs/apply`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ jobId: id }),
+    });
+    const data = await json.json();
+    console.log(data);
+    if (data.success) {
+      alert("Applied to job successfully");
+    } else {
+      alert("Failed to apply to job");
+    }
+  };
 
   return (
     <div className="flex flex-col items-center py-10">
